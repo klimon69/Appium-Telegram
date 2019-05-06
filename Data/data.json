@@ -1,0 +1,9 @@
+{
+  "platformName": "Android",
+  "platformVersion" : "",
+  "deviceName" :"81e9b20e",
+  "appPackage" : "org.telegram.messenger",
+  "appActivity" : "org.telegram.ui.LaunchActivity",
+  "noReset" : "True"
+
+}

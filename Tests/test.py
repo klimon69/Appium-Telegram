@@ -27,18 +27,7 @@ class AppTestAppium(unittest.TestCase):
       send_message = SendMsg(self.driver)
       send_message.chooseContact()
       send_message.typeMsg()
-      send_message.clickSend()
-
-
-      # contactItem = self.driver.find_element_by_xpath("//android.view.ViewGroup[contains(@index,'2')]")
-      # contactItem.click()
-      # elementTypeField = self.driver.find_element_by_xpath("//android.widget.EditText[contains(@index,'1')]")
-      # elementTypeField.clear()
-      # elementTypeField.send_keys("Hello. If you are reading this, my first appium automation has passed")
-      # sendButton = self.driver.find_element_by_xpath("//android.widget.ImageView[@content-desc ='Send']")
-      # sendButton.click()
-
-
+      #send_message.clickSend()
 
 if __name__ == '__main__':
     unittest.main()

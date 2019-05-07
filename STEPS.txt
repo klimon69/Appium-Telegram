@@ -1,0 +1,57 @@
+1. Install sdk and appium
+2. connect device
+3. cmd shell
+4. adb devices
+6. cmd shell
+7. appium -1 127.0.0.1
+
+
+
+======================
+Allure Test
+======================
+
+Создать папку c:\Temp
+
+В моём случае структура папок проекты выглядит следующим образом
+
+c:\Temp
+
+Весь проект лежит в  C:\Users\АндрЭ\Desktop\Appium-Telegram
+
+Appium-Telegram\Tests\test.py - тесткейс с вызовом методов
+Appium-Telegram\ScreenObjects\SendMessage.py - класс с методами по действиям
+Appium-Telegram\ScreenObjects\Locators.py - локаторы
+Appium-Telegram\Data\data.json - любые данные в json формате
+
+Так вот нужно зайти в КОНЕВУЮ ПАПКУ с проектом(Appium-Telegram) и именно оттуда выполнить
+
+python -m pytest Tests/test.py --alluredir=c:\Temp
+
+(не забыть во втором шеле запустить аппиюм и проверить подключение устройства командой adb devices)
+!!!
+
+В коде если есть абсолютные пути их нужно исправить так как теперь мы запускаем не из папки Tests а из Appium-Telegram
+with open('../Data/data.json', encoding='utf-8') as data_file:   - без аллюра
+with open('Data/data.json', encoding='utf-8') as data_file: - с аллюром
+
+!!!
+
+======================
+Allure Commandline
+======================
+
+Установка:
+Download the latest version as zip archive from https://github.com/allure-framework/allure2/releases
+Unpack the archive to allure-commandline directory. I did it to C:\Temp\allure-commandline\allure-2.11.0
+Oткрыть cmd shell перейти в C:\Temp\allure-commandline\allure-2.11.0\bin
+Ввести allure serve c:\Temp и он соберёт из отчётов которые сгенерил красивый отчёт и запустит его на сервере
+
+======================
+create GitIgnore
+======================
+
+Создайте текстовый файл gitignore.txt
+Откройте его в текстовом редакторе и добавьте свои правила, затем сохраните и закройте
+Удерживайте SHIFT, щелкните правой кнопкой мыши папку, в которой вы находитесь, затем выберите Открыть окно команд здесь
+Затем переименуйте файл в командной строке, ren gitignore.txt .gitignore
